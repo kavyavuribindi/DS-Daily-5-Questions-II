@@ -14,5 +14,5 @@ class Solution:
             profit=price-minPrice
             maxProfit=max(maxProfit,profit)
 
-        return maxProfit
+        return maxProfit 
 '''
