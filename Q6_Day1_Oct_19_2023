@@ -1,0 +1,12 @@
+189. Rotate Array
+
+https://leetcode.com/problems/rotate-array/description/?envType=study-plan-v2&envId=top-interview-150
+
+'''
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        k=k%len(nums)
+        nums.reverse()
+        nums[:k]=reversed(nums[:k])
+        nums[k:]=reversed(nums[k:])
+'''
