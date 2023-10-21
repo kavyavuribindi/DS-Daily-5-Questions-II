@@ -1,0 +1,26 @@
+274. H-Index
+
+https://leetcode.com/problems/h-index/description/?envType=study-plan-v2&envId=top-interview-150
+
+'''
+class Solution:
+    def hIndex(self, citations: List[int]) -> int:
+        c = sorted(citations)
+        n = len(c)
+        for i in range(n):
+            if c[i] >= n-i:
+                return n-i
+        return 0
+'''
+
+'''
+class Solution:
+    def hIndex(self, citations: List[int]) -> int:
+        citations.sort(reverse=True)
+        h = 0
+        for h, val in enumerate(citations, start=1):
+            if val < h:
+                return h - 1
+        return h
+
+'''
