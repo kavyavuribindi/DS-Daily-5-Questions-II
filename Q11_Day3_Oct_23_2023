@@ -1,0 +1,20 @@
+238. Product of Array Except Self
+
+https://leetcode.com/problems/product-of-array-except-self/submissions/?envType=study-plan-v2&envId=top-interview-150
+
+'''
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        left=[1]
+        prod=1
+        for i in range(len(nums)-1): #0, 1, 2
+            prod=prod*nums[i]
+            left.append(prod)
+
+        prod=1
+        for i in range(len(nums)-2,-1,-1): #2,1,0
+            prod=prod*nums[i+1] 
+            left[i]=prod*left[i]
+
+        return left
+'''
